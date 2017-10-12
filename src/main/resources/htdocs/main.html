@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/main.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<title bundle="page.title">Rock, Paper and Scissors</title>
+</head>
+<body class="bg-yellow">
+	<!-- Page Content -->
+	<section>
+		<div class="jumbotron">
+			<div id="note"></div>
+			<div class="row">
+				<div id="maxScore">
+					<span bundle="page.max.score">Max Score</span>:&nbsp;<span id="maxScoreValue">--</span>
+				</div>
+			</div>
+			<div class="row">
+				<div id="scores">
+					<div id="player1">
+						<div id="name1" bundle="page.player1_0">You</div>
+						<div id="score1">0</div>
+					</div>
+					<div id="player2">
+						<div id="name2" bundle="page.player2_0">Computer</div>
+						<div id="score2">0</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div id="weapons">
+					<div class="weapon">
+						<a href="#"><img id="rock" src="img/rock.png" class="fade"/></a>
+					</div>
+					<div class="weapon">
+						<a href="#"><img id="paper" src="img/paper.png" class="fade"></a>
+					</div>
+					<div class="weapon">
+						<a href="#"><img id="scissors" src="img/scissors.png" class="fade"/></a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div id="buttons" class="text-center">
+					<button id="0" type="button" class="btn btn-info btn-lg active" bundle="page.human.vs.computer">Human vs Computer</button>
+					<button id="1" type="button" class="btn btn-success btn-lg disabled" bundle="page.computer.vs.computer">Computer vs Computer</button>
+				</div>
+			</div>
+			<div class="row">
+				<div id="languages">
+					<div class="lang">
+						<a href="#"><img id="en" src="img/en.png" class="fade" /></a>
+					</div>
+					<div class="lang">
+						<a href="#"><img id="pt" src="img/pt.png" class="fade" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Modal -->
+	<div id="rps-modal"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/main.min.js"></script>
+</body>
+</html>
