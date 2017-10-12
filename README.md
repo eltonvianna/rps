@@ -80,7 +80,7 @@ The current Java logging configuration is file based, editing the file applicati
 
 ### Tests
 
-Go to **rock-paper-scissors** directory and run the command: **mvn test** to perform all tests. The JBehave reports are generated under the directory **rock-paper-scissors/target/jbehave/view/index.html**
+Go to **rps** directory and run the command: **mvn test** to perform all tests. The JBehave reports are generated under the directory **rock-paper-scissors/target/jbehave/view/index.html**
 
 ### Known issues
 
