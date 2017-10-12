@@ -20,8 +20,8 @@ Installation of **Java 8** and **Maven 3**. Add **JAVA_HOME/jre/bin** and **M2_H
 
 ## Getting Started
 
-After cloned this project, change to **rock-paper-scissors** directory and run the command: **mvn clean install**. This command will perform the build, run the tests and packaging. After finished the build,
-go to **target** directory (cd target) and run the command: **java -jar rock-paper-scissors-0.0.1-SNAPSHOT-jar-with-dependencies.jar** to start the micro server.
+After cloned this project, change to **rps** directory and run the command: **mvn clean install**. This command will perform the build, run the tests and packaging. After finished the build,
+go to **target** directory (cd target) and run the command: **java -jar rps-0.0.1-SNAPSHOT-jar-with-dependencies.jar** to start the micro server.
 
 ### Micro server
 
