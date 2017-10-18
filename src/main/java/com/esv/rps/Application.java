@@ -3,10 +3,8 @@
  */
 package com.esv.rps;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.esv.net.server.MicroServer;
+import com.esv.utile.logging.Logger;
 
 /**
  * @author Elton S. Vianna <elton.vianna@yahoo.co.uk>
@@ -15,7 +13,7 @@ import com.esv.net.server.MicroServer;
  */
 public class Application {
 
-    private static final Logger LOGGER = Logger.getGlobal();
+    private static final Logger LOGGER = Logger.getLogger(Application.class);
 
     /**
      * <p>Starts the micro server</p>
@@ -25,10 +23,8 @@ public class Application {
     public static void main(String[] args) {
         try {
             MicroServer.run();
-        } catch (Exception e) {
-            if (LOGGER.isLoggable(Level.SEVERE)) {
-                LOGGER.log(Level.SEVERE, "Unexpected micro server error", e);
-            }
+        } catch (Throwable t) {
+            LOGGER.fatal("Unexpected micro server error", t);
             System.exit(1);
         }
     }

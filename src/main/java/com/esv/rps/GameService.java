@@ -5,11 +5,11 @@ package com.esv.rps;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import com.esv.net.rest.Get;
 import com.esv.net.rest.RestService;
-import com.esv.utile.utils.ConfigurationUtils;
+import com.esv.utile.logging.Logger;
+import com.esv.utile.utils.PropertiesUtils;
 
 /**
  * @author Elton S. Vianna <elton.vianna@yahoo.co.uk>
@@ -19,7 +19,7 @@ import com.esv.utile.utils.ConfigurationUtils;
 @RestService(singleton = true)
 public class GameService {
     
-    private static final Logger LOGGER = Logger.getGlobal();
+    private static final Logger LOGGER = Logger.getLogger(GameService.class);
     
     @Get("/rest/rock")
     public Map<String, String> rock() {
@@ -44,10 +44,10 @@ public class GameService {
     @SuppressWarnings("serial")
     @Get("/rest/configuration")
     public Map<String, String> configuration() {
-        final String maxScore = ConfigurationUtils.getStringProperty("rps.max.score", "7");
-        final String noteTimeout = ConfigurationUtils.getStringProperty("rps.note.timeout", "1e3");
-        final String wellcomeMessages = ConfigurationUtils.getStringProperty("rps.wellcome.messages", "5");
-        LOGGER.fine(() -> "Max score: " + maxScore);
+        final String maxScore = PropertiesUtils.getStringProperty("rps.max.score", "7");
+        final String noteTimeout = PropertiesUtils.getStringProperty("rps.note.timeout", "1e3");
+        final String wellcomeMessages = PropertiesUtils.getStringProperty("rps.wellcome.messages", "5");
+        LOGGER.debug(() -> "Max score: " + maxScore);
         return new LinkedHashMap<String,String>() {{
             put("maxScore", maxScore);
             put("noteTimeout", noteTimeout);
@@ -64,7 +64,7 @@ public class GameService {
         final String player2 = "human".equals(player1) ? "computer" : "computer2";
         final Weapon weapon2 = Weapon.randomWeapon();
         final int result = weapon.compare(weapon2);
-        LOGGER.fine(() -> "Player1: " + player1 + " moves: " + weapon.name + ", player2: " + player2 + " moves: " + weapon2.name + ". Result: " + result);
+        LOGGER.debug(() -> "Player1: " + player1 + " moves: " + weapon.name + ", player2: " + player2 + " moves: " + weapon2.name + ". Result: " + result);
         return new LinkedHashMap<String, String>() {{
                 put("mode", "human".equals(player1) ? "0" : "1");
                 put("result", String.valueOf(result));
